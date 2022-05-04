@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.todo-list {
+  background-color: #3e545f;
+  font-family: "Space Mono", monospace;
+  padding: 1rem;
+  min-width: 400px;
+  min-height: 300px;
+  margin-top: 2rem;
+}
+
+.title {
+  border-bottom: 1px solid #88e917;
+  font-size: 1.5rem;
+  font-family: "BioRhyme", serif;
+  color: #88e719;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.form-input,
+.form-button,
+.form-input-calendar {
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: .9rem;
+  font-weight: bold;
+  color: white;
+
+}
+
+.form-input {
+  outline: none;
+  background-color: #8bc34a;
+  border-color: rgba(255, 255, 255, 0.1);
+  padding: 0 0 0 .5rem;
+  font-size: 1.1rem
+}
+
+.form-button {
+  border: 1px;
+  background: #8bc34a;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 0.25rem;
+  transition: all .3s ease-in-out;
+}
+
+.form-input-calendar {
+  border: 1px;
+  background: #8bc34a;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+
+.form-button:hover {
+  color: #8bc34a;
+  background: white;
+}
+
+.list {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.task {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #F6F1D1;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding: 1rem 3rem;
+}
+
+.check-button, .delete-button {
+  background-color: #F6F1D1;
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.task.done .check-button {
+  background-color: #46494C;
+  color: #F6F1D1;
+}
+
+.check-icon {
+  display: block;
+  padding: 1px;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.task.done .check-icon {
+  background-color: #0B2027;
+}
+
+.content {
+  margin: 0;
+}
+
+.task.done .content {
+  text-decoration: line-through;
+}
+
+.content-data {
+  color: white;
+}
+
+
+@media screen and (max-width: 480px) {
+  .app {
+    padding: 0 1.2rem;
+  }
+  .form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-input,
+  .form-input-calendar,
+  .form-button {
+    margin-top: .5rem;
+  }
+
+  .form-input {
+    padding: .3rem;
+  }
+}
