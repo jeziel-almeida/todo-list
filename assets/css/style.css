@@ -1,148 +1,204 @@
-body {
-  margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+:root {
+    --color-primary: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "BioRhyme", Roboto mono;
 }
 
 .todo-list {
-  background-color: #3e545f;
-  font-family: "Space Mono", monospace;
-  padding: 1rem;
-  min-width: 400px;
-  min-height: 300px;
-  margin-top: 2rem;
+    margin: .6rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: .2rem 0 0 0;
 }
 
 .title {
-  border-bottom: 1px solid #88e917;
-  font-size: 1.5rem;
-  font-family: "BioRhyme", serif;
-  color: #88e719;
+    text-align: center;
+    color: black;
+}
+
+.header {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.header i {
+    margin-left: .7rem;
 }
 
 .form {
-  display: flex;
-  justify-content: center;
-  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid white;
+    padding: 1rem;
 }
 
 .form-input,
-.form-button,
-.form-input-calendar {
-  border-radius: 8px;
-  padding: 0.75rem;
-  font-size: .9rem;
-  font-weight: bold;
-  color: white;
-
+.form-input-calendar,
+.form-button {
+    margin-bottom: .6rem;
+    padding: .7rem .9rem;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 1.1rem;
 }
 
 .form-input {
-  outline: none;
-  background-color: #8bc34a;
-  border-color: rgba(255, 255, 255, 0.1);
-  padding: 0 0 0 .5rem;
-  font-size: 1.1rem
-}
-
-.form-button {
-  border: 1px;
-  background: #8bc34a;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-left: 0.25rem;
-  transition: all .3s ease-in-out;
+    font-weight: bold;
+    margin-top: 0.6rem;
 }
 
 .form-input-calendar {
-  border: 1px;
-  background: #8bc34a;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-left: 0.25rem;
+    font-weight: bold;
+    width: fit-content;
+    cursor: pointer
+}
+
+.form-input-calendar:hover {
+    background-color: orange;
+    color: white;
+}
+
+.form-button {
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    cursor: pointer;
+    font-size: 1rem
 }
 
 .form-button:hover {
-  color: #8bc34a;
-  background: white;
+    background-color: orange;
+    color: white
 }
 
 .list {
-  padding: 0;
-  list-style: none;
-  width: 100%;
+    list-style: none;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    color: white;
 }
 
 .task {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #F6F1D1;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  padding: 1rem 3rem;
-}
-
-.check-button, .delete-button {
-  background-color: #F6F1D1;
-  border: none;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  outline: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-.task.done .check-button {
-  background-color: #46494C;
-  color: #F6F1D1;
-}
-
-.check-icon {
-  display: block;
-  padding: 1px;
-  width: 10px;
-  height: 10px;
-  background-color: transparent;
-  border-radius: 50%;
-}
-
-.task.done .check-icon {
-  background-color: #0B2027;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    background-color: rgba(128, 128, 128, 0.584);
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    transition: all 1s ease;
 }
 
 .content {
-  margin: 0;
-}
-
-.task.done .content {
-  text-decoration: line-through;
+    margin-bottom: 1rem;
 }
 
 .content-data {
-  color: white;
+    color: white;
+    font-weight: bold;
+    margin: 1rem 0;
+    background-color: rgba(255, 166, 0, 0.719);
+    width: fit-content;
+    padding: .2rem;
+
 }
 
+.check-button, .delete-button {
+    color: white;
+    border: none;
+    margin-left: .4rem;
+    padding: .6rem;
+    height: fit-content;
+    font-size: .9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .4s ease;
+    font-family: "BioRhyme", Roboto mono;
+}
 
-@media screen and (max-width: 480px) {
-  .app {
-    padding: 0 1.2rem;
-  }
-  .form {
-    flex-direction: column;
-    align-items: center;
-  }
-  .form-input,
-  .form-input-calendar,
-  .form-button {
-    margin-top: .5rem;
-  }
+.check-button {
+    background-color: #1fa55b;
+}
 
-  .form-input {
-    padding: .3rem;
-  }
+.delete-button {
+    background-color: #dc3545;
+}
+
+.check-button:hover {
+    background-color: white;
+    color: #1fa55b
+}
+
+.delete-button:hover {
+    background-color: white;
+    color: #dc3545
+}
+
+.task.done p {
+    text-decoration: line-through;
+    color: lightgray;
+}
+
+.fall {
+    transform: translateY(10rem) rotateZ(170deg);
+    opacity: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .todo-list {
+        width: 70%;
+    }
+
+    .form {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 2rem;
+    }
+
+    .form-button,
+    .form-input,
+    .form-input-calendar {
+        margin: 0 0 0 1rem;
+    }
+
+    .list {
+        padding: 0 3rem;
+    }
+
+    .task {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .content {margin: 0 1rem 0 0}
+
+    .task-divisoria {
+        display: flex;
+    }
+
+    .check-button,
+    .delete-button {
+        font-weight: bold;
+    }
 }

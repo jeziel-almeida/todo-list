@@ -10,10 +10,15 @@ export const handleNovoItem = (evento) => {
     const input = document.querySelector('[data-form-input]')
     const valor = input.value;
     
+    if(valor.length === 0) {
+        alert("Tarefa vazia!");
+        return;
+    }
+    
     const calendario = document.querySelector('[data-form-data]')
 
     if(calendario.value.length < 16 ) {
-        alert("Data inválida");
+        alert("Data inválida!");
         return;
     }
 

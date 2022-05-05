@@ -1,11 +1,21 @@
-// export const mudaBackground = () => {
-//     console.log("click");
+const todoList = document.querySelector('.todo-list');
 
-//     const vetorAtual = vetor[0+1]
+const defineImagem = (atual) => {
+    todoList.style.background = `url(./img/background${atual}.jpg) no-repeat center`;
+    todoList.style.backgroundSize = "cover";
+}
 
-//     localStorage.setItem('background', JSON.stringify(vetorAtual));
+var atual = parseInt(localStorage.getItem('background')) || 0;
 
-//     const todoList = document.querySelector('.todo-list');
-//     todoList.style.background = `url(./background${vetorAtual}.jpg) no-repeat center`;
-//     todoList.style.backgroundSize = "cover";
-// }
+export const setImagem = () => {
+    defineImagem(atual);
+}
+
+export const mudarImagem = () => {
+    atual++;
+
+    if(atual > 5) atual = 0;
+
+    localStorage.setItem('background', atual);
+    defineImagem(atual);
+}
